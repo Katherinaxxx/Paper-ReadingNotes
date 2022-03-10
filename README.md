@@ -182,3 +182,27 @@ iflyEA：语言运用、语言表达、篇章异常检测、篇章质量
 篇章没有位置信息的问题，引入段落相对位置+段落内位置+全局位置的embedding
 
 润色：生成式风险高，机翻式不连贯。转换成推荐润色
+
+# UNIFIEDSKG: Unifying and Multi-Tasking Structured Knowledge Grounding with Text-to-Text Language Models (18家机构联合发表)[[paper](https://arxiv.org/pdf/2201.05966.pdf)][[code](https://github.com/hkunlp/unifiedskg)]
+
+* 目标： 提升SKG（结构化的数据作为输入）任务的效果，刷榜：）
+
+![skg](figs/unifiedskg-skg.png)
+
+* 方法：把结构化的数据统一用非结构化的文本表示，然后用t5微调
+
+T5精调+多任务prefix-tunning
+
+![](figs/unifiedskg.png)
+
+# data2vec: A General Framework for Self-supervised Learning in Speech, Vision and Language (arxiv 2022 meta)[[code](www.github.com/pytorch/fairseq/tree/master/examples/data2vec)]
+
+* motivation：to propose a general framework for 3 modality， speech、nlp、cv.
+
+* method: to predict latent representations instead of single word or cv token
+
+![data2vec](figs/data2vec.png)
+
+用masked input的representation预测unmasked input的representation
+
+* conclusion：在三类分类任务上微调后，语音和cv超出其他baseline较明显，文本上略有提升
